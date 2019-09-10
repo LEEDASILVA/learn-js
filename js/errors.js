@@ -11,7 +11,7 @@
  const callError = Error('using the function call')
 
  const newError = new Error('using the new key word')
- 
+
  console.log('-> ', newError,'\n', callError)
 
  //their are other errors types ....
