@@ -1,5 +1,5 @@
 //Number
-//is a wrapper object allowing you o work with numbercal values. A Number object is created
+//is a wrapper object allowing you yo work with numbercal values. A Number object is created
 //using the Number() contructor
 
 
