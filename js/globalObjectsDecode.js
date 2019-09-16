@@ -1,4 +1,4 @@
-const separetor = () => {
+export const separetor = () => {
     console.log("---------------------------")
 }
 

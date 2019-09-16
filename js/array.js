@@ -95,3 +95,28 @@ console.log(array, matchDandB)
 //          Creats a new array instance with a variable number of arguments
 //          ex: Array.of(1,2,3,4) --> [1,2,3,4]
 
+//sort a array
+//we can sort a array in ascii order or give a function to sort as we what
+console.log('-----sort list-----')
+arr = [5,1,4,3,2]
+
+console.log(arr.sort(function(a, b) {
+    return a - b
+}))
+
+console.log(arr.sort(function(a, b) {
+    return b - a
+}))
+
+console.log(arr.sort())
+
+console.log(arr.sort(function (a, b) {
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  }
+))
