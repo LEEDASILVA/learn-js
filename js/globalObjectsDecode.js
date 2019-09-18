@@ -1,7 +1,4 @@
-export const separetor = () => {
-    console.log("---------------------------")
-}
-
+const separetor = require('./helper.js')
 //decodeURL 
 //the decodeURL() fucntion decodes a URL previously created  by encodeURI() or by a similar routine
 var uri = 'http://google.com/?x=шеллы'
@@ -19,7 +16,7 @@ try {
 let component = '?ex=exemple'
 console.log("encodeURIComponent: ", encodeURIComponent(component))
 
-separetor()
+separetor('-')
 
 //infinity
 //the global Infinity property is a number value representing infinity
@@ -28,7 +25,7 @@ console.log(bigbignumber)
 if (bigbignumber === Infinity) { //or isFinite(bigbignumber)
     console.log("very big number!!")
 }
-separetor()
+separetor('-')
 //the global NaN property is a valur representing Not-A-Number
 //ex:
 const isORisnt = (x) => {
@@ -49,7 +46,7 @@ isORisnt('no')
 isORisnt('1')
 isORisnt(1)
 
-separetor()
+separetor('-')
 
 //proxy 
 //objbect is used to define custom behavior for fundamental operations
@@ -83,4 +80,4 @@ console.log(person.age)
 person.age = 'two'
 person.age = 201
 console.log(err,'\n', err1)
-separetor()
+separetor('-')
