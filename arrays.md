@@ -20,4 +20,20 @@ var myRe = /d(b+)(d)/i;
 var myArray = myRe.exec('cdbBdbsbz');
 ```
 
+## Array.from(arrayLike[, mapFn[, thisArg]])
+
+- `arrayLike`
+  - An array-like or iterable object to convert to an array.
+- `mapFnOptional`
+  - Map function to call on every element of the array.
+- `thisArgOptional`
+  - Value to use as this when executing `mapFn`.
+
+## .indexOf(searchElement[, fromIndex])
+
+- `searchElement`
+  - Element to locate in the array.
+- `fromIndex` Optional
+  - The index to start the search at. If the index is greater than or equal to the array's length, -1 is returned, which means the array will not be searched. If the provided index value is a negative number, it is taken as the offset from the end of the array. Note: if the provided index is negative, the array is still searched from front to back. If the provided index is 0, then the whole array will be searched. Default: 0 (entire array is searched).
+
 ## **You can see the examples on the arrays.js file**
