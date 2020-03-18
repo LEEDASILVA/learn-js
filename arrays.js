@@ -259,23 +259,43 @@ let nameCounter = names.reduce((acc, cv) => {
 console.log(nameCounter);
 
 const people = [
-  { name: 'Odilia', age: 30 },
-  { name: 'Lee', age: 20 },
-  { name: 'Lito', age: 30 },
-  { name: 'Jesse', age: 20 },
-  { name: 'Patricia', age: 20 }
-]
+  { name: "Odilia", age: 30 },
+  { name: "Lee", age: 20 },
+  { name: "Lito", age: 30 },
+  { name: "Jesse", age: 20 },
+  { name: "Patricia", age: 20 }
+];
 
 const groupBy = (obj, property) => {
   return obj.reduce((acc, cv) => {
-    let key = cv[property]
+    let key = cv[property];
     if (!acc[key]) {
-      acc[key] = []
+      acc[key] = [];
     }
-    acc[key].push(cv)
-    return acc
-  }, {})
-}
+    acc[key].push(cv);
+    return acc;
+  }, {});
+};
 
-let groupedAge = groupBy(people, 'age')
-console.log(groupedAge)
+let groupedAge = groupBy(people, "age");
+console.log(people, "\n grouped by age: \n", groupedAge);
+
+sep(".slice(beginig, end)");
+
+const nbr = [1, 2, 3, 4, 5, 6, 7];
+console.log("arr:", nbr, "slice(2)", nbr.slice(2));
+
+console.log("arr:", nbr, "slice(2, 4)", nbr.slice(2, 4));
+
+sep(".some(callback functions)");
+
+console.log(
+  "arr:",
+  nbr,
+  "\nusing .some to see if it contains even numbers\n",
+  nbr.some((even = element => element % 2 === 0))
+);
+
+sep('.splice(start, deleteCount, items....)')
+
+console.log(nbr.splice(3, 1, 6, 7, 8, 9), nbr)
