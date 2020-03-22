@@ -11,6 +11,8 @@ ex :
     // result -> (((1*3) + 5) * 3)
 */
 
+// this solution just find simple solutions the first solution not the shortest
+// need to do it to find the shorter solution
 const findexpression = nbr => {
   return find(1, "1", nbr)
 }
