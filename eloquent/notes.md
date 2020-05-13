@@ -183,7 +183,7 @@ console.log(a.toUpperCase())
 // SOMETHING
 ```
 
------
+------
 
 ## Arrays
 
@@ -221,3 +221,55 @@ console.log(object3.value);
 - The `object1` and `object2` bindings grasp the same object, which is why changing `object1` also changes the value of `object2`. They are said to have the same *identity*.
 
 - The binding `object3` points to a different object, which initially contains the same properties as `object1` but lives a separate life.
+
+
+
+
+
+
+--------
+
+## Regular Expressions
+
+- quantifiers :
+
+- the `+` sign is 1 or more, the `*` is 0 or more
+  - `*` Repeats the previous item zero or more times. Greedy, so as many items as possible will be matched before trying permutations with less matches of the preceding item, up to the point where the preceding item is not matched at all.
+
+  - basically the difference is that `*` matches an empty string while `+` doesn't.
+
+```javascript
+console.log(/'\d+'/.test("'123'"));
+// → true
+console.log(/'\d+'/.test("''"));
+// → false
+console.log(/'\d*'/.test("'123'"));
+// → true
+console.log(/'\d*'/.test("''"));
+// → true
+```
+
+- `?` A question mark makes a part of a pattern optional, meaning it may occur zero times or one time.
+
+```javascript
+let neighbor = /neighbou?r/;
+console.log(neighbor.test("neighbour"));
+// → true
+console.log(neighbor.test("neighbor"));
+// → truelet neighbor = /neighbou?r/;
+console.log(neighbor.test("neighbour"));
+// → true
+console.log(neighbor.test("neighbor"));
+// → true
+```
+
+you can apply the `+` or `*` in a group :
+
+```javascript
+let cartoonCrying = /boo+(hoo+)+/i;
+console.log(cartoonCrying.test("Boohoooohoohooo"));
+```
+
+The first and second + characters apply only to the second o in boo and hoo,
+respectively. The third + applies to the whole group (hoo+) , matching one or
+more sequences like that.

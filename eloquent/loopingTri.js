@@ -5,7 +5,7 @@ const loopingForTriangle = (char, howMany) => {
     for (let j = 0; j <= i; j++) {
       result += char
     }
-    result += "\n"
+    if (i != howMany - 1) result += "\n"
   }
   return result
 }
@@ -30,15 +30,14 @@ const loopingWhileTriangle = (char, howMany) => {
 // we can use `.padStart`
 // using recursion
 const loopingRecursionTriangle = (char, howMany) => {
-  if (howMany == 0) return '\n'
-  return loopingRecursionTriangle(char + '*', howMany-1) + char + '\n'
+  if (howMany == 0) return "\n"
+  return loopingRecursionTriangle(char + "*", howMany - 1) + char + "\n"
 }
 
-
-console.log(loopingForTriangle('a', 5))
-console.log(loopingForTriangle('+', 10))
-console.log(loopingForTriangle('#', 4))
-console.log(loopingForTriangle('{}', 13))
+console.log(loopingForTriangle("a", 5))
+console.log(loopingForTriangle("+", 10))
+console.log(loopingForTriangle("#", 4))
+console.log(loopingForTriangle("{}", 13))
 
 console.log(loopingForTriangle("#", 15))
 console.log(loopingWhileTriangle("0", 30))
@@ -49,10 +48,16 @@ const assert = require("assert").strict
 
 assert.strictEqual(typeof loopingForTriangle, "function")
 assert.strictEqual(loopingForTriangle.length, 2)
-assert.strictEqual(loopingForTriangle('a', 5), 'a\naa\naaa\naaaa\naaaaa\n')
-assert.strictEqual(loopingForTriangle('+', 10), '+\n++\n+++\n++++\n+++++\n++++++\n+++++++\n++++++++\n+++++++++\n++++++++++\n')
-assert.strictEqual(loopingForTriangle('#', 4), '#\n##\n###\n####\n')
-assert.strictEqual(loopingForTriangle('{}', 13), '{}\n{}{}\n{}{}{}\n{}{}{}{}\n{}{}{}{}{}\n{}{}{}{}{}{}\n{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}{}{}{}\n')
+assert.strictEqual(loopingForTriangle("a", 5), "a\naa\naaa\naaaa\naaaaa")
+assert.strictEqual(
+  loopingForTriangle("+", 10),
+  "+\n++\n+++\n++++\n+++++\n++++++\n+++++++\n++++++++\n+++++++++\n++++++++++"
+)
+assert.strictEqual(loopingForTriangle("#", 4), "#\n##\n###\n####")
+assert.strictEqual(
+  loopingForTriangle("{}", 13),
+  "{}\n{}{}\n{}{}{}\n{}{}{}{}\n{}{}{}{}{}\n{}{}{}{}{}{}\n{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}{}{}\n{}{}{}{}{}{}{}{}{}{}{}{}{}"
+)
 
 // End of tests
 

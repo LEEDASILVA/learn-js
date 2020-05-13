@@ -78,10 +78,25 @@ console.log(name)
 
 devision('small and more complex example')
 
-string = 'filea.mp3 file_1.mp3 file_2.mp3 hello.csv logs.log test.txt'
-regex = /(\w+)\.mp3/g
+string = `
+HELLO, LOOK_AT mp3 YOU 
+qw12_3file.mp3
+fe.mp4
+fle.mov
+fie.pdf
+le.mp3
+le.pdf
+fle.mp3
+fe.pdf
+e.pdf
+fi.mp3`
 
-let match1 = regex.exec(string)
+//regex = /(\w+)\.mp3/
+regex = /\w+\.mp3/g
+
+let match1 = string.match(regex)
+
+console.log('----------', match1, '----------')
 
 while (match1) {
     const files = match1[1]
