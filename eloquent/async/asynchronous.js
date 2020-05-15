@@ -12,9 +12,8 @@ const posts = [
 const getPosts = () => {
   setTimeout(
     () =>
-      (document.body.innerHTML = posts.reduce(
-        (out, post) => (out += `<li>${post.title}</li>`),
-        ''
+      (document.body.innerHTML = posts.map((post) =>
+        (out += `<li>${post.title}</li>`).join('')
       )),
     1000
   )
@@ -26,6 +25,8 @@ const getPosts = () => {
  * **callback** examples
  * so using callback, the function must take a callback function so that
  * it can execute the function went the process finishes
+ *
+ * the big problem with the usage of callbacks is the usage of a second callback the code tents to be big and unwritebull
  */
 
 const createPostCallBack = (post, callback) => {
